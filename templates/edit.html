@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Item</h1>
+
+    <!-- Formular pentru editare item -->
+<form method="POST">
+    <div>
+        <label>Inventory Number:</label>
+        <input type="number" name="inventory_number" value="{{ item.inventory_number }}" required>
+    </div>
+    <div>
+        <label>Description:</label>
+        <input type="text" name="description" value="{{ item.description }}" maxlength="100" required>
+    </div>
+    <div>
+        <label>Status:</label>
+        <select name="status">
+            <option value="OK" {% if item.status == 'OK' %}selected{% endif %}>OK</option>
+            <option value="Damaged" {% if item.status == 'Damaged' %}selected{% endif %}>Damaged</option>
+            <option value="Sent for maintenance" {% if item.status == 'Sent for maintenance' %}selected{% endif %}>Sent for maintenance</option>
+        </select>
+    </div>
+
+            <!-- Butoane de acțiune -->
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

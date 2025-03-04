@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-container">
+    <h2>Add New Item</h2>
+
+        <!-- Formular pentru adăugare item nou -->
+    <form method="POST">
+
+                <!-- Selector pentru carte din lista predefinită -->
+        <div class="form-group">
+            <label>Select Book:</label>
+            <select name="inventory_number" required class="book-select">
+                <option value="">-- Select a Book --</option>
+                {% for number, title in books.items() %}
+                <option value="{{ number }}">{{ numberber }} - {{ title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+                <!-- Câmp pentru notă personală -->
+        <div class="form-group">
+            <label>Personal Note/Description:</label>
+            <textarea name="personal_note"
+                      maxlength="100"
+                      class="note-input"
+                      placeholder="Add your note here (max 100 characters)"
+            ></textarea>
+            <small class="char-counter">0/100 characters</small>
+        </div>
+
+                <!-- Selector pentru status -->
+        <div class="form-group">
+            <label>Status:</label>
+            <select name="status">
+                <option value="OK">OK</option>
+                <option value="Damaged">Damaged</option>
+                <option value="Sent for maintenance">Sent for maintenance</option>
+            </select>
+        </div>
+
+                <!-- Butoane de acțiune -->
+        <button type="submit" class="button">Add Item</button>
+        <a href="{{ url_for('index') }}" class="button">Back to List</a>
+    </form>
+</div>
+
+
+<!-- Script pentru contorul de caractere -->
+<script>
+    // Character counter for textarea
+    document.querySelector('.note-input').addEventListener('input', function() {
+        const counter = document.querySelector('.char-counter');
+        counter.textContent = `${this.value.length}/100 characters`;
+
+        // Optional: Change color when approaching limit
+        if (this.value.length > 80) {
+            counter.style.color = '#dc3545';
+        } else {
+            counter.style.color = '#666';
+        }
+    });
+</script>
+{% endblock %}
