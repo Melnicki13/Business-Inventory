@@ -1,3 +1,9 @@
+===============================
+   ╦  ╦╔╗ ╦═╗╔═╗╦═╗╦ ╦
+   ║  ║╠╩╗╠╦╝╠═╣╠╦╝╚╦╝
+   ╩═╝╩╚═╝╩╚═╩ ╩╩╚═ ╩ 
+===============================
+
 Sistem de Gestiune a Inventarului Bibliotecă
 Descriere Proiect
 
@@ -179,4 +185,13 @@ Note Importante
     Păstrare credențiale securizate
     Actualizare periodică
 
-Acest README oferă o privire de ansamblu asupra proiectului și poate fi extins în funcție de necesități specifice sau dezvoltări viitoare.
+Acest README oferă o privire de ansamblu asupra proiectului și poate fi extins în funcție 
+de necesități specifice sau dezvoltări viitoare.
+
+
+ _     _ _                           
+| |   (_) |__  _ __ __ _ _ __ _   _ 
+| |   | | '_ \| '__/ _` | '__| | | |
+| |___| | |_) | | | (_| | |  | |_| |
+|_____|_|_.__/|_|  \__,_|_|   \__, |
+                              |___/ 
